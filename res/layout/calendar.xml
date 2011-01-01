@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:id="@+id/navigation"
+		android:gravity="center"> 
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:id="@+id/previous"
+			android:text=" &lt; " />
+		<Button
+			android:layout_width="wrap_content"
+			android:gravity="center"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:id="@+id/up" />
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:id="@+id/next"
+			android:text=" &gt; " />
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/events"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:visibility="gone">
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"
+			android:text="TODO: Items" />
+	</LinearLayout>
+	<TableLayout
+		android:id="@+id/days"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:stretchColumns="*"
+		android:visibility="gone">
+		<TableRow>
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+		</TableRow>
+		<TableRow>
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+		</TableRow>
+		<TableRow>
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+		</TableRow>
+		<TableRow>
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+		</TableRow>
+		<TableRow>
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+		</TableRow>
+		<TableRow>
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+		</TableRow>
+		<TableRow>
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+			<TextView style="@style/Day" />
+		</TableRow>
+	</TableLayout>
+	<TableLayout
+		android:id="@+id/months"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:stretchColumns="*"
+		android:visibility="gone">
+		<TableRow>
+			<TextView style="@style/Month" />
+			<TextView style="@style/Month" />
+			<TextView style="@style/Month" />
+			<TextView style="@style/Month" />
+		</TableRow>
+		<TableRow>
+			<TextView style="@style/Month" />
+			<TextView style="@style/Month" />
+			<TextView style="@style/Month" />
+			<TextView style="@style/Month" />
+		</TableRow>
+		<TableRow>
+			<TextView style="@style/Month" />
+			<TextView style="@style/Month" />
+			<TextView style="@style/Month" />
+			<TextView style="@style/Month" />
+		</TableRow>
+	</TableLayout>
+	<TableLayout
+		android:id="@+id/years"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:stretchColumns="*"
+		android:visibility="gone">
+		<TableRow>
+			<TextView style="@style/Year" />
+			<TextView style="@style/Year" />
+			<TextView style="@style/Year" />
+			<TextView style="@style/Year" />
+		</TableRow>
+		<TableRow>
+			<TextView style="@style/Year" />
+			<TextView style="@style/Year" />
+			<TextView style="@style/Year" />
+			<TextView style="@style/Year" />
+		</TableRow>
+		<TableRow>
+			<TextView style="@style/Year" />
+			<TextView style="@style/Year" />
+			<TextView style="@style/Year" />
+			<TextView style="@style/Year" />
+		</TableRow>
+	</TableLayout>
+</LinearLayout>
