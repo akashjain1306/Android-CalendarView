@@ -28,11 +28,11 @@ public class Main extends Activity {
 				View[] vs = new View[2];
 				
 				TextView tv1 = new TextView(Main.this);
-				tv1.setText("Hello");
+				tv1.setText("TODO:");
 				vs[0] = tv1;
 				
 				TextView tv2 = new TextView(Main.this);
-				tv2.setText("Goodbye");
+				tv2.setText("Put events for this day here.");
 				vs[1] = tv2;
 				
 				view.setListViewItems(vs);
