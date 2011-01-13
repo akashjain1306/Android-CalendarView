@@ -163,7 +163,7 @@ public class CalendarWrapper {
 	}
 	
 	public Calendar getVisibleEndDate() {
-		return _visibleStartDate;
+		return _visibleEndDate;
 	}
 
 	public void setOnDateChangedListener(OnDateChangedListener l) {
