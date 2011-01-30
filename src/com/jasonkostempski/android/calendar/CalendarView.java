@@ -54,39 +54,39 @@ public class CalendarView extends LinearLayout {
 	}
 
 	public void setDaysWithEvents(CalendarDayMarker[] markers) {
-		for (int i = 0; i < markers.length; i++) {
-			CalendarDayMarker m = markers[i];
+		int hits = 0;
+		int dayItemsInGrid = 42;
+		int row = 1; // Skip weekday header row
+		int col = 0;
+		Calendar tempCal = _calendar.getVisibleStartDate();
 
-			int row = 1; // Skip weekday header row
-			int col = 0;
-
-			for (int j = 0; j < 42; j++) {
-				TableRow tr = (TableRow) _days.getChildAt(row);
-				TextView tv = (TextView) tr.getChildAt(col);
-				int[] tag = (int[]) tv.getTag();
-				int monthAdd = tag[0];
-				int day = tag[1];
-
-				if (monthAdd == 0 && _calendar.getYear() == m.getYear() && _calendar.getMonth() == m.getMonth() && day == m.getDay()) {
+		for(int i = 0; i < dayItemsInGrid; i++) {
+			if(hits == markers.length) //If we've already marked as many days as we have markers
+				break;
+			
+			TableRow tr = (TableRow) _days.getChildAt(row);
+			TextView tv = (TextView) tr.getChildAt(col);
+			int[] tag = (int[]) tv.getTag();
+			int day = tag[1];
+			
+			for (int j = 0; j < markers.length; j++) {
+				CalendarDayMarker m = markers[j];
+				
+				if (tempCal.get(Calendar.YEAR) == m.getYear() && tempCal.get(Calendar.MONTH) == m.getMonth() && day == m.getDay()) {
 					tv.setBackgroundColor(m.getColor());
-				}
-				else if (monthAdd == -1) {
-					tv.setBackgroundDrawable(null);
-				}
-				else if (monthAdd == 1) {
-					tv.setBackgroundDrawable(null);
-				}
-				else {
-					tv.setBackgroundDrawable(null);
-				}
-
-				col++;
-
-				if (col == 7) {
-					col = 0;
-					row++;
+					hits++;
+					break;
 				}
 			}
+			
+			tempCal.add(Calendar.DAY_OF_MONTH, 1);
+			
+			col++;
+
+			if (col == 7) {
+				col = 0;
+				row++;
+			}			
 		}
 	}
 
@@ -241,7 +241,10 @@ public class CalendarView extends LinearLayout {
 
 			TableRow tr = (TableRow) _days.getChildAt(row);
 			TextView tv = (TextView) tr.getChildAt(col);
-
+			
+			//Clear current markers, if any.
+			tv.setBackgroundDrawable(null);
+			
 			tv.setText(dayGrid[i] + "");
 
 			if (monthAdd == 0)

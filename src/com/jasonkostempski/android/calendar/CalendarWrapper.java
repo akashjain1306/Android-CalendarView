@@ -118,7 +118,8 @@ public class CalendarWrapper {
 
 			for (int i = previousMonthCount; i > 0; i--) {
 				int day = previousMonthMax - i + 1; 
-				if(index == previousMonthCount) {
+				
+				if(i == previousMonthCount) {
 					_visibleStartDate = (Calendar)tempCal.clone();
 					_visibleStartDate.set(Calendar.DAY_OF_MONTH, day);
 				}
@@ -159,11 +160,11 @@ public class CalendarWrapper {
 	}
 	
 	public Calendar getVisibleStartDate() {
-		return _visibleStartDate;
+		return (Calendar) _visibleStartDate.clone();
 	}
 	
 	public Calendar getVisibleEndDate() {
-		return _visibleEndDate;
+		return (Calendar) _visibleEndDate.clone();
 	}
 
 	public void setOnDateChangedListener(OnDateChangedListener l) {
